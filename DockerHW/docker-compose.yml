@@ -1,4 +1,9 @@
 version: '3'
 
 services:
-  web:
+  web: DDweb
+    image: my-web-app  # 這是你的 Docker 映像名稱，可以修改
+    build: .
+    ports:
+      - "8080:80"  # 這裡假設你的應用程式在 80 port 運行
+    restart: always  # 確保容器崩潰時會自動重啟
